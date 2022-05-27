@@ -2,10 +2,25 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   gap: 3rem;
   font-size: 2rem;
   padding: 2rem;
   background: #333;
+}
+
+.navbar .routes-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5rem;
+}
+
+.navbar .routes-container > * > * {
+  text-decoration: none;
+  color: #fff;
 }
 
 .navbar > * {
@@ -13,7 +28,7 @@
 }
 
 .navbar > * > * {
-  text-decoration: none;
   color: #fff;
+  cursor: pointer;
 }
 /*# sourceMappingURL=Navbar.css.map */

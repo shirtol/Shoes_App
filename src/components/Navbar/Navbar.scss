@@ -1,14 +1,25 @@
 .navbar {
     display: flex;
+    justify-content: space-between;
     gap: 3rem;
     font-size: 2rem;
     padding: 2rem;
     background: #333;
+    .routes-container {
+        display: flex;
+        gap: 5rem;
+        & > * {
+            & > * {
+                text-decoration: none;
+                color: #fff;
+            }
+        }
+    }
     & > * {
         list-style: none;
         & > * {
-            text-decoration: none;
             color: #fff;
+            cursor: pointer;
         }
     }
 }
