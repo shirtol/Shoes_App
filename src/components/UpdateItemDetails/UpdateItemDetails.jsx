@@ -9,37 +9,37 @@ export default class UpdateItemDetails extends Component {
                 <input
                     placeholder="name"
                     id="productName"
-                    value={this.props.productName}
+                    value={this.props.item.productName}
                     onChange={this.props.onInputChange}
                 ></input>
                 <input
                     placeholder="category"
                     id="category"
-                    value={this.props.category}
+                    value={this.props.item.category}
                     onChange={this.props.onInputChange}
                 ></input>
                 <input
                     placeholder="size"
                     id="size"
-                    value={this.props.size}
+                    value={this.props.item.size}
                     onChange={this.props.onInputChange}
                 ></input>
                 <input
                     placeholder="price"
                     id="price"
-                    value={this.props.price}
+                    value={this.props.item.price}
                     onChange={this.props.onInputChange}
                 ></input>
                 <input
                     placeholder="image"
                     id="imageUrl"
-                    value={this.props.imageUrl}
+                    value={this.props.item.imageUrl}
                     onChange={this.props.onInputChange}
                 ></input>
                 <textarea
                     placeholder="description"
                     id="description"
-                    value={this.props.description}
+                    value={this.props.item.description}
                     onChange={this.props.onInputChange}
                 ></textarea>
                 <div className="item-details-btn-container">
@@ -51,12 +51,6 @@ export default class UpdateItemDetails extends Component {
                         buttonText="Discard"
                         onBtnClick={this.props.onDiscardChanges}
                     ></Button>
-                    {/* <button onClick={this.props.onSaveChanges}>
-                        Save Changes
-                    </button>
-                    <button onClick={this.props.onDiscardChanges}>
-                        Discard Changes
-                    </button> */}
                 </div>
             </div>
         );

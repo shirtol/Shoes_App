@@ -26,7 +26,6 @@ export default class ShoeDetails extends Component {
 
     onUpdateShoeDetails = async () => {
         await CatalogApi.put(`/${this.state.shoeItem.id}`, this.state.shoeItem);
-        // this.updateItemFunc(data);
         this.props.history.goBack();
     };
 
@@ -46,20 +45,9 @@ export default class ShoeDetails extends Component {
                                     src={this.state.shoeItem.imageUrl}
                                     alt="#"
                                 ></img>
-                                {/* <h2>{this.state.shoeItem.productName}</h2>
-                                <h4>{this.state.shoeItem.category}</h4>
-                                <h4>{this.state.shoeItem.size}</h4>
-                                <h5>{this.state.shoeItem.price}</h5>
-                                <p>{this.state.shoeItem.description}</p>
-                                <button>Back</button> */}
                             </div>
                             <UpdateItemDetails
-                                productName={this.state.shoeItem.productName}
-                                category={this.state.shoeItem.category}
-                                size={this.state.shoeItem.size}
-                                price={this.state.shoeItem.price}
-                                imageUrl={this.state.shoeItem.imageUrl}
-                                description={this.state.shoeItem.description}
+                                item={this.state.shoeItem}
                                 onInputChange={this.onInputChange}
                                 onSaveChanges={this.onUpdateShoeDetails}
                                 onDiscardChanges={this.onDiscardDetailsChanges}

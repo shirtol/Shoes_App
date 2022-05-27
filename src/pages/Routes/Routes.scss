@@ -13,9 +13,6 @@
         border-radius: 4px;
         overflow-y: scroll;
         scrollbar-width: thin;
-        // display: flex;
-        // align-items: center;
-        // justify-content: center;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
             rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
 
@@ -26,7 +23,6 @@
             border-radius: 4px;
         }
         &::-webkit-scrollbar-thumb {
-            // background-color: #333;
             background-color: #eec0c6;
             background-image: linear-gradient(315deg, #eec0c6 0%, #e58c8a 74%);
             border-radius: 4px;
