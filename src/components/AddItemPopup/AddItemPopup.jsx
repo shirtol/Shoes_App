@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Button from "../Button/Button";
 import "./AddItemPopup.css";
 
 export default class AddItemPopup extends Component {
@@ -7,7 +8,7 @@ export default class AddItemPopup extends Component {
             this.props.isShown && (
                 <div className="add-item-container">
                     <div className="add-item-popup-container">
-                        <h3>
+                        <h3 className="add-item-title">
                             Please fill all the fields and submit your new
                             shoes!
                         </h3>
@@ -41,19 +42,28 @@ export default class AddItemPopup extends Component {
                             value={this.props.imageUrl}
                             onChange={this.props.onInputChange}
                         ></input>
-                        <input
+                        <textarea
+                            className="description-container"
                             placeholder="product description"
                             id="newShoesDescription"
                             value={this.props.description}
                             onChange={this.props.onInputChange}
-                        ></input>
+                        ></textarea>
                         <div className="buttons-container">
-                            <button onClick={this.props.onCancelClicked}>
+                            <Button
+                                buttonText="Cancel"
+                                onBtnClick={this.props.onCancelClicked}
+                            ></Button>
+                            <Button
+                                buttonText="Submit"
+                                onBtnClick={this.props.onAddClicked}
+                            ></Button>
+                            {/* <button onClick={this.props.onCancelClicked}>
                                 Cancel
                             </button>
                             <button onClick={this.props.onAddClicked}>
                                 Submit
-                            </button>
+                            </button> */}
                         </div>
                     </div>
                 </div>

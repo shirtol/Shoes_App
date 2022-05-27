@@ -16,6 +16,8 @@
   width: -moz-max-content;
   width: max-content;
   gap: 2rem;
+  -ms-flex-item-align: center;
+      align-self: center;
   height: 100%;
 }
 
@@ -46,5 +48,12 @@
   background-color: #eec0c6;
   background-image: linear-gradient(315deg, #eec0c6 0%, #e58c8a 74%);
   border-radius: 4px;
+}
+
+.update-item-details-form .item-details-btn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 4rem;
 }
 /*# sourceMappingURL=UpdateItemDetails.css.map */

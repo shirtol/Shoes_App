@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Button from "../Button/Button";
 import "./UpdateItemDetails.css";
 
 export default class UpdateItemDetails extends Component {
@@ -42,12 +43,20 @@ export default class UpdateItemDetails extends Component {
                     onChange={this.props.onInputChange}
                 ></textarea>
                 <div className="item-details-btn-container">
-                    <button onClick={this.props.onSaveChanges}>
+                    <Button
+                        buttonText="Save"
+                        onBtnClick={this.props.onSaveChanges}
+                    ></Button>
+                    <Button
+                        buttonText="Discard"
+                        onBtnClick={this.props.onDiscardChanges}
+                    ></Button>
+                    {/* <button onClick={this.props.onSaveChanges}>
                         Save Changes
                     </button>
                     <button onClick={this.props.onDiscardChanges}>
                         Discard Changes
-                    </button>
+                    </button> */}
                 </div>
             </div>
         );
