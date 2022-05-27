@@ -20,11 +20,26 @@
 }
 
 .update-item-details-form > * {
+  font-family: "FuturaPT";
+  letter-spacing: 1.5px;
   height: 3rem;
   width: 30rem;
 }
 
-.update-item-details-form > *:last-child {
+.update-item-details-form > *:nth-last-child(2) {
   resize: none;
+  scrollbar-width: thin;
+}
+
+.update-item-details-form > *:nth-last-child(2)::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+}
+
+.update-item-details-form > *:nth-last-child(2)::-webkit-scrollbar-thumb {
+  background-color: #eec0c6;
+  background-image: linear-gradient(315deg, #eec0c6 0%, #e58c8a 74%);
+  border-radius: 4px;
 }
 /*# sourceMappingURL=UpdateItemDetails.css.map */

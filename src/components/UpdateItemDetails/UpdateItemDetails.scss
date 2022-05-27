@@ -7,10 +7,24 @@
     gap: 2rem;
     height: 100%;
     & > * {
+        font-family: "FuturaPT";
+        letter-spacing: 1.5px;
         height: 3rem;
         width: 30rem;
     }
-    & > *:last-child {
+    & > *:nth-last-child(2) {
         resize: none;
+        scrollbar-width: thin;
+        &::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+            background-color: #fff;
+        }
+        &::-webkit-scrollbar-thumb {
+            // background-color: #333;
+            background-color: #eec0c6;
+            background-image: linear-gradient(315deg, #eec0c6 0%, #e58c8a 74%);
+            border-radius: 4px;
+        }
     }
 }
