@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,yBAAyB,CAAC;EACtB,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,KAAK,EAAE,WAAW;EAClB,GAAG,EAAE,IAAI;CAQZ;;AAZD,AAKI,yBALqB,GAKjB,CAAC,CAAC;EACF,MAAM,EAAE,IAAI;EACZ,KAAK,EAAE,KAAK;CACf;;AARL,AASI,yBATqB,GASjB,CAAC,AAAA,WAAW,CAAC;EACb,MAAM,EAAE,IAAI;CACf",
-    "sources": [
-        "UpdateItemDetails.scss"
-    ],
-    "names": [],
-    "file": "UpdateItemDetails.css"
-}

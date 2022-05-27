@@ -1,0 +1,31 @@
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4rem;
+    .page-container {
+        background-color: #f6f6f6;
+        background-image: linear-gradient(315deg, #f6f6f6 0%, #e9e9e9 74%);
+        width: 80%;
+        height: 80vh;
+        padding: 0 auto;
+        border-radius: 4px;
+        overflow-y: scroll;
+        scrollbar-width: thin;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+            rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+
+        &::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+            background-color: #fff;
+            border-radius: 4px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: #eec0c6;
+            background-image: linear-gradient(315deg, #eec0c6 0%, #e58c8a 74%);
+            border-radius: 4px;
+        }
+    }
+}

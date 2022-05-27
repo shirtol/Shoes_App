@@ -11,12 +11,6 @@ export default class Catalog extends Component {
         shoesCatalog: [],
         isAddItemPopupOpen: false,
         isDeleteItemPopupOpen: false,
-        newShoesName: "",
-        newShoesPrice: "",
-        newShoesSize: "",
-        newShoesImage: "",
-        newShoesDescription: "",
-        newShoesCategory: "",
         selectedItemToDelete: null,
     };
 
@@ -37,7 +31,6 @@ export default class Catalog extends Component {
                 item={shoe}
                 onDeleteIconClicked={this.onDeleteClicked}
                 id={shoe.id}
-                // onUpdateItem={this.onUpdateItem}
             ></Shoe>
         ));
     };
@@ -51,15 +44,7 @@ export default class Catalog extends Component {
     onInputChange = ({ target }) =>
         this.setState({ [target.id]: target.value });
 
-    onSubmitNewShoesClick = async () => {
-        const newShoes = {
-            productName: this.state.newShoesName,
-            price: this.state.newShoesPrice,
-            category: this.state.newShoesCategory,
-            description: this.state.newShoesDescription,
-            size: this.state.newShoesSize,
-            imageUrl: this.state.newShoesImage,
-        };
+    onSubmitNewShoesClick = async (newShoes) => {
         const { data } = await CatalogApi.post("/", newShoes);
         this.setState((prevState) => ({
             shoesCatalog: [...prevState.shoesCatalog, data],
@@ -100,27 +85,11 @@ export default class Catalog extends Component {
         });
     };
 
-    // onUpdateItem = (updatedItem) => {
-    //     const newShoesCatalog = this.state.shoesCatalog.map((shoe) => {
-    //         if (shoe.id === updatedItem.id) {
-    //             return updatedItem;
-    //         }
-    //         return shoe;
-    //     });
-    //     this.setState({ shoesCatalog: newShoesCatalog });
-    // };
-
     render() {
         return (
             <div className="center">
                 <AddItemPopup
                     isShown={this.state.isAddItemPopupOpen}
-                    productName={this.state.newShoesName}
-                    category={this.state.newShoesCategory}
-                    size={this.state.newShoesSize}
-                    price={this.state.newShoesPrice}
-                    imageUrl={this.state.newShoesImage}
-                    description={this.state.newShoesDescription}
                     onInputChange={this.onInputChange}
                     onAddClicked={this.onSubmitNewShoesClick}
                     onCancelClicked={this.onCancelAddingClick}

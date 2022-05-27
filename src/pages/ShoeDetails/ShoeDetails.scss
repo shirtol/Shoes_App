@@ -6,13 +6,11 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    // height: 80vh;
+    height: 100%;
     .shoe-details-container {
         display: flex;
-        align-items: flex-start;
         justify-content: space-evenly;
         width: 90%;
         padding: 4rem 0;
-        // height: 100%;
     }
 }
