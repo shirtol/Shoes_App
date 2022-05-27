@@ -1,0 +1,13 @@
+.update-item-details-form {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    gap: 2rem;
+    & > * {
+        height: 3rem;
+        width: 30rem;
+    }
+    & > *:last-child {
+        resize: none;
+    }
+}
