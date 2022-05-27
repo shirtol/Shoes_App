@@ -42,6 +42,7 @@ export default class ShoeDetails extends Component {
                         <div className="shoe-details-container">
                             <div>
                                 <img
+                                    className="preview-img"
                                     src={this.state.shoeItem.imageUrl}
                                     alt="#"
                                 ></img>

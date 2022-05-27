@@ -41,7 +41,7 @@ export default class UpdateItemDetails extends Component {
                     value={this.props.description}
                     onChange={this.props.onInputChange}
                 ></textarea>
-                <div>
+                <div className="item-details-btn-container">
                     <button onClick={this.props.onSaveChanges}>
                         Save Changes
                     </button>
