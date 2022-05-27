@@ -14,11 +14,11 @@ const Routes = () => {
             <Switch>
                 <Route exact path="/" component={Home}></Route>
                 <Route exact path="/shoes-catalog" component={Catalog}></Route>
-                {/* <Route
+                <Route
                     exact
                     path="/shoes-catalog/:id"
                     render={(props) => <ShoeDetails {...props}></ShoeDetails>}
-                ></Route> */}
+                ></Route>
             </Switch>
         </>
     );
