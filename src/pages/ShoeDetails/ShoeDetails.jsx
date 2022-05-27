@@ -9,15 +9,6 @@ export default class ShoeDetails extends Component {
 
     state = { shoeItem: this.product, isLoading: true };
 
-    // state = {
-    //     shoesName: this.props.location.item.productName,
-    //     shoesPrice: this.props.location.item.price,
-    //     shoesSize: this.props.location.item.size,
-    //     shoesImage: this.props.location.item.imageUrl,
-    //     shoesDescription: this.props.location.item.description,
-    //     shoesCategory: this.props.location.item.category,
-    // };
-
     componentDidMount = async () => {
         if (this.props.location.item === undefined) {
             const id = this.props.location.pathname.split("/")[2];
@@ -28,13 +19,11 @@ export default class ShoeDetails extends Component {
     };
 
     onInputChange = ({ target }) =>
-        this.setState({ [target.id]: target.value }, () =>
-            console.log(this.state[target.id])
-        );
+        this.setState((prevState) => ({
+            shoeItem: { ...prevState.shoeItem, [target.id]: target.value },
+        }));
 
     render() {
-        console.log(this.props.location);
-        console.log("hiii");
         return (
             <>
                 {this.state.isLoading ? (

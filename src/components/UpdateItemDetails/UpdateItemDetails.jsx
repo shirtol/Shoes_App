@@ -6,38 +6,38 @@ export default class UpdateItemDetails extends Component {
         return (
             <div className="update-item-details-form">
                 <input
-                    placeholder="product name"
-                    id="shoesName"
+                    placeholder="name"
+                    id="productName"
                     value={this.props.productName}
                     onChange={this.props.onInputChange}
                 ></input>
                 <input
-                    placeholder="product category"
-                    id="shoesCategory"
+                    placeholder="category"
+                    id="category"
                     value={this.props.category}
                     onChange={this.props.onInputChange}
                 ></input>
                 <input
-                    placeholder="product size"
-                    id="shoesSize"
+                    placeholder="size"
+                    id="size"
                     value={this.props.size}
                     onChange={this.props.onInputChange}
                 ></input>
                 <input
-                    placeholder="product price"
-                    id="shoesPrice"
+                    placeholder="price"
+                    id="price"
                     value={this.props.price}
                     onChange={this.props.onInputChange}
                 ></input>
                 <input
-                    placeholder="product image"
-                    id="shoesImage"
+                    placeholder="image"
+                    id="imageUrl"
                     value={this.props.imageUrl}
                     onChange={this.props.onInputChange}
                 ></input>
                 <textarea
-                    placeholder="product description"
-                    id="shoesDescription"
+                    placeholder="description"
+                    id="description"
                     value={this.props.description}
                     onChange={this.props.onInputChange}
                 ></textarea>

@@ -13,11 +13,7 @@ export default class DeleteItemPopup extends Component {
                             <button onClick={this.props.onCancelClicked}>
                                 Cancel
                             </button>
-                            <button
-                                onClick={() =>
-                                    this.props.onApproveClicked(this.props.id)
-                                }
-                            >
+                            <button onClick={this.props.onApproveClicked}>
                                 Yes
                             </button>
                         </div>

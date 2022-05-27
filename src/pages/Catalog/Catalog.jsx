@@ -76,22 +76,27 @@ export default class Catalog extends Component {
         this.setState({ isAddItemPopupOpen: false });
     };
 
-    onDeleteClicked = () => {
-        this.setState({ isDeleteItemPopupOpen: true });
+    onDeleteClicked = (id) => {
+        this.setState({
+            isDeleteItemPopupOpen: true,
+            selectedItemToDelete: id,
+        });
     };
 
     onCancelDeleteClick = () => {
         this.setState({ isDeleteItemPopupOpen: false });
     };
 
-    onApproveDeleteClick = async (id) => {
-        this.setState({ selectedItemToDelete: id });
+    onApproveDeleteClick = async () => {
         const filteredShoesArr = this.state.shoesCatalog.filter(
-            (shoe) => shoe.id !== id
+            (shoe) => shoe.id !== this.state.selectedItemToDelete
         );
         console.log(filteredShoesArr);
-        await CatalogApi.delete(`/${id}`);
-        this.setState({ shoesCatalog: filteredShoesArr });
+        await CatalogApi.delete(`/${this.state.selectedItemToDelete}`);
+        this.setState({
+            shoesCatalog: filteredShoesArr,
+            isDeleteItemPopupOpen: false,
+        });
     };
 
     render() {

@@ -24,7 +24,9 @@ export default class Shoe extends Component {
                 </Link>
                 <i
                     className="fa-solid fa-trash-can fa-2x"
-                    onClick={this.props.onDeleteIconClicked}
+                    onClick={() =>
+                        this.props.onDeleteIconClicked(this.props.item.id)
+                    }
                 ></i>
             </div>
         );
