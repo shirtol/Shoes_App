@@ -1,8 +1,11 @@
 .update-item-details-form {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: max-content;
     gap: 2rem;
+    height: 100%;
     & > * {
         height: 3rem;
         width: 30rem;

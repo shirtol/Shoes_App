@@ -40,6 +40,18 @@ export default class ShoeDetails extends Component {
                 ) : (
                     <div className="center-shoe-details">
                         <div className="shoe-details-container">
+                            <div>
+                                <img
+                                    src={this.state.shoeItem.imageUrl}
+                                    alt="#"
+                                ></img>
+                                {/* <h2>{this.state.shoeItem.productName}</h2>
+                                <h4>{this.state.shoeItem.category}</h4>
+                                <h4>{this.state.shoeItem.size}</h4>
+                                <h5>{this.state.shoeItem.price}</h5>
+                                <p>{this.state.shoeItem.description}</p>
+                                <button>Back</button> */}
+                            </div>
                             <UpdateItemDetails
                                 productName={this.state.shoeItem.productName}
                                 category={this.state.shoeItem.category}
@@ -51,18 +63,6 @@ export default class ShoeDetails extends Component {
                                 onSaveChanges={this.onUpdateShoeDetails}
                                 onDiscardChanges={this.onDiscardDetailsChanges}
                             ></UpdateItemDetails>
-                            <div>
-                                <img
-                                    src={this.state.shoeItem.imageUrl}
-                                    alt="#"
-                                ></img>
-                                <h2>{this.state.shoeItem.productName}</h2>
-                                <h4>{this.state.shoeItem.category}</h4>
-                                <h4>{this.state.shoeItem.size}</h4>
-                                <h5>{this.state.shoeItem.price}</h5>
-                                <p>{this.state.shoeItem.description}</p>
-                                <button>Back</button>
-                            </div>
                         </div>
                     </div>
                 )}
