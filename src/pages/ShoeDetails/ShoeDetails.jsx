@@ -25,10 +25,7 @@ export default class ShoeDetails extends Component {
         }));
 
     onUpdateShoeDetails = async () => {
-        const { data } = await CatalogApi.put(
-            `/${this.state.shoeItem.id}`,
-            this.state.shoeItem
-        );
+        await CatalogApi.put(`/${this.state.shoeItem.id}`, this.state.shoeItem);
         // this.updateItemFunc(data);
         this.props.history.goBack();
     };
