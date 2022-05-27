@@ -10,6 +10,7 @@ export default class Shoe extends Component {
                     to={{
                         pathname: `${this.props.catalogLocation}/${this.props.item.id}`,
                         item: this.props.item,
+                        // onUpdateItem: this.props.onUpdateItem,
                     }}
                 >
                     <div className="shoe-item-container">

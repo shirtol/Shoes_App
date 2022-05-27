@@ -6,6 +6,7 @@ import Spinner from "../../components/Spinner/Spinner";
 
 export default class ShoeDetails extends Component {
     product = this.props.location.item;
+    updateItemFunc = this.props.location.onUpdateItem;
 
     state = { shoeItem: this.product, isLoading: true };
 
@@ -23,6 +24,17 @@ export default class ShoeDetails extends Component {
             shoeItem: { ...prevState.shoeItem, [target.id]: target.value },
         }));
 
+    onUpdateShoeDetails = async () => {
+        const { data } = await CatalogApi.put(
+            `/${this.state.shoeItem.id}`,
+            this.state.shoeItem
+        );
+        // this.updateItemFunc(data);
+        this.props.history.goBack();
+    };
+
+    onDiscardDetailsChanges = () => this.props.history.goBack();
+
     render() {
         return (
             <>
@@ -39,6 +51,8 @@ export default class ShoeDetails extends Component {
                                 imageUrl={this.state.shoeItem.imageUrl}
                                 description={this.state.shoeItem.description}
                                 onInputChange={this.onInputChange}
+                                onSaveChanges={this.onUpdateShoeDetails}
+                                onDiscardChanges={this.onDiscardDetailsChanges}
                             ></UpdateItemDetails>
                             <div>
                                 <img

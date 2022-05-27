@@ -37,6 +37,7 @@ export default class Catalog extends Component {
                 item={shoe}
                 onDeleteIconClicked={this.onDeleteClicked}
                 id={shoe.id}
+                // onUpdateItem={this.onUpdateItem}
             ></Shoe>
         ));
     };
@@ -98,6 +99,16 @@ export default class Catalog extends Component {
             isDeleteItemPopupOpen: false,
         });
     };
+
+    // onUpdateItem = (updatedItem) => {
+    //     const newShoesCatalog = this.state.shoesCatalog.map((shoe) => {
+    //         if (shoe.id === updatedItem.id) {
+    //             return updatedItem;
+    //         }
+    //         return shoe;
+    //     });
+    //     this.setState({ shoesCatalog: newShoesCatalog });
+    // };
 
     render() {
         return (
