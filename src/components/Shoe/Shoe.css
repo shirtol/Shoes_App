@@ -1,5 +1,16 @@
+.shoe-container {
+  position: relative;
+}
+
 .shoe-item-container .shoe-img {
   max-width: 100%;
   max-height: 100%;
+}
+
+.fa-trash-can {
+  position: absolute;
+  bottom: 3rem;
+  left: 0;
+  cursor: pointer;
 }
 /*# sourceMappingURL=Shoe.css.map */

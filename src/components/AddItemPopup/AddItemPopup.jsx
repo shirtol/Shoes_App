@@ -48,7 +48,9 @@ export default class AddItemPopup extends Component {
                             onChange={this.props.onInputChange}
                         ></input>
                         <div className="buttons-container">
-                            <button>Cancel</button>
+                            <button onClick={this.props.onCancelClicked}>
+                                Cancel
+                            </button>
                             <button onClick={this.props.onAddClicked}>
                                 Submit
                             </button>

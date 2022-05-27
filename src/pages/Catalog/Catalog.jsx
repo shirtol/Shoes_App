@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { CatalogApi } from "../../api/api";
 import AddItemBtn from "../../components/AddItemBtn/AddItemBtn";
 import AddItemPopup from "../../components/AddItemPopup/AddItemPopup";
+import DeleteItemPopup from "../../components/DeleteItemPopup/DeleteItemPopup";
 import Shoe from "../../components/Shoe/Shoe";
 import "./Catalog.css";
 
@@ -9,12 +10,14 @@ export default class Catalog extends Component {
     state = {
         shoesCatalog: [],
         isAddItemPopupOpen: false,
+        isDeleteItemPopupOpen: false,
         newShoesName: "",
         newShoesPrice: "",
         newShoesSize: "",
         newShoesImage: "",
         newShoesDescription: "",
         newShoesCategory: "",
+        selectedItemToDelete: null,
     };
 
     async componentDidMount() {
@@ -32,6 +35,8 @@ export default class Catalog extends Component {
                 key={shoe.productName + shoe.price + shoe.imageUrl}
                 catalogLocation={this.props.location.pathname}
                 item={shoe}
+                onDeleteIconClicked={this.onDeleteClicked}
+                id={shoe.id}
             ></Shoe>
         ));
     };
@@ -67,6 +72,28 @@ export default class Catalog extends Component {
         }));
     };
 
+    onCancelAddingClick = () => {
+        this.setState({ isAddItemPopupOpen: false });
+    };
+
+    onDeleteClicked = () => {
+        this.setState({ isDeleteItemPopupOpen: true });
+    };
+
+    onCancelDeleteClick = () => {
+        this.setState({ isDeleteItemPopupOpen: false });
+    };
+
+    onApproveDeleteClick = async (id) => {
+        this.setState({ selectedItemToDelete: id });
+        const filteredShoesArr = this.state.shoesCatalog.filter(
+            (shoe) => shoe.id !== id
+        );
+        console.log(filteredShoesArr);
+        await CatalogApi.delete(`/${id}`);
+        this.setState({ shoesCatalog: filteredShoesArr });
+    };
+
     render() {
         return (
             <div className="center">
@@ -80,7 +107,14 @@ export default class Catalog extends Component {
                     description={this.state.newShoesDescription}
                     onInputChange={this.onInputChange}
                     onAddClicked={this.onSubmitNewShoesClick}
+                    onCancelClicked={this.onCancelAddingClick}
                 ></AddItemPopup>
+                <DeleteItemPopup
+                    isShown={this.state.isDeleteItemPopupOpen}
+                    onCancelClicked={this.onCancelDeleteClick}
+                    onApproveClicked={this.onApproveDeleteClick}
+                    id={this.state.selectedItemToDelete}
+                ></DeleteItemPopup>
                 <div className="catalog-container">{this.displayShoes()}</div>;
                 <AddItemBtn onAddClicked={this.onAddClicked}></AddItemBtn>
             </div>
