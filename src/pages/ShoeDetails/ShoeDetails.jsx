@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import UpdateItemDetails from "../../components/UpdateItemDetails/UpdateItemDetails";
+import ShoesForm from "../../components/ShoesForm/ShoesForm";
 import "./ShoeDetails.css";
 import { CatalogApi } from "../../api/api";
 import Spinner from "../../components/Spinner/Spinner";
@@ -46,12 +46,12 @@ export default class ShoeDetails extends Component {
                                     alt="#"
                                 ></img>
                             </div>
-                            <UpdateItemDetails
+                            <ShoesForm
                                 item={this.state.shoeItem}
                                 onInputChange={this.onInputChange}
                                 onSaveChanges={this.onUpdateShoeDetails}
                                 onDiscardChanges={this.onDiscardDetailsChanges}
-                            ></UpdateItemDetails>
+                            ></ShoesForm>
                         </div>
                     </div>
                 )}

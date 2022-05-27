@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import UpdateItemDetails from "../UpdateItemDetails/UpdateItemDetails";
+import ShoesForm from "../ShoesForm/ShoesForm";
 import "./AddItemPopup.css";
 
 export default class AddItemPopup extends Component {
@@ -41,12 +41,12 @@ export default class AddItemPopup extends Component {
                             Please fill all the fields and submit your new
                             shoes!
                         </h3>
-                        <UpdateItemDetails
+                        <ShoesForm
                             onInputChange={this.onInputChange}
                             onSaveChanges={this.saveNewItem}
                             onDiscardChanges={this.resetNewShoesData}
                             item={this.state}
-                        ></UpdateItemDetails>
+                        ></ShoesForm>
                     </div>
                 </div>
             )

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Button from "../Button/Button";
-import "./UpdateItemDetails.css";
+import "./ShoesForm.css";
 
-export default class UpdateItemDetails extends Component {
+export default class ShoesForm extends Component {
     render() {
         return (
             <div className="update-item-details-form">
