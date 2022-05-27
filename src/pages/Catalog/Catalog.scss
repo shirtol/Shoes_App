@@ -1,0 +1,13 @@
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .catalog-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        width: 90%;
+        gap: 3rem;
+        align-self: center;
+        padding-top: 2rem;
+    }
+}

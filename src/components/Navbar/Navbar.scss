@@ -1,0 +1,14 @@
+.navbar {
+    display: flex;
+    gap: 3rem;
+    font-size: 2rem;
+    padding: 2rem;
+    background: #333;
+    & > * {
+        list-style: none;
+        & > * {
+            text-decoration: none;
+            color: #fff;
+        }
+    }
+}
