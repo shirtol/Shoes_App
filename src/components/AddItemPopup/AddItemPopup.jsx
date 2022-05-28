@@ -38,8 +38,7 @@ export default class AddItemPopup extends Component {
                 <div className="add-item-container">
                     <div className="add-item-popup-container">
                         <h3 className="add-item-title">
-                            Please fill all the fields and submit your new
-                            shoes!
+                            Please fill all the fields and submit your new shoes
                         </h3>
                         <ShoesForm
                             onInputChange={this.onInputChange}
