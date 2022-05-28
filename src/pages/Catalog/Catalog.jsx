@@ -4,6 +4,7 @@ import AddItemBtn from "../../components/AddItemBtn/AddItemBtn";
 import AddItemPopup from "../../components/AddItemPopup/AddItemPopup";
 import DeleteItemPopup from "../../components/DeleteItemPopup/DeleteItemPopup";
 import Shoe from "../../components/Shoe/Shoe";
+import Spinner from "../../components/Spinner/Spinner";
 import "./Catalog.css";
 
 export default class Catalog extends Component {
@@ -12,14 +13,15 @@ export default class Catalog extends Component {
         isAddItemPopupOpen: false,
         isDeleteItemPopupOpen: false,
         selectedItemToDelete: null,
+        isLoading: true,
     };
 
     async componentDidMount() {
         try {
             const { data } = await CatalogApi.get("/");
-            this.setState({ shoesCatalog: data });
+            this.setState({ shoesCatalog: data, isLoading: false });
         } catch (err) {
-            console.log(err);
+            console.error(err);
         }
     }
 
@@ -45,17 +47,23 @@ export default class Catalog extends Component {
         this.setState({ [target.id]: target.value });
 
     onSubmitNewShoesClick = async (newShoes) => {
-        const { data } = await CatalogApi.post("/", newShoes);
-        this.setState((prevState) => ({
-            shoesCatalog: [...prevState.shoesCatalog, data],
-            isAddItemPopupOpen: false,
-            newShoesName: "",
-            newShoesPrice: "",
-            newShoesSize: "",
-            newShoesImage: "",
-            newShoesDescription: "",
-            newShoesCategory: "",
-        }));
+        this.setState({ isLoading: true });
+        try {
+            const { data } = await CatalogApi.post("/", newShoes);
+            this.setState((prevState) => ({
+                shoesCatalog: [...prevState.shoesCatalog, data],
+                isAddItemPopupOpen: false,
+                newShoesName: "",
+                newShoesPrice: "",
+                newShoesSize: "",
+                newShoesImage: "",
+                newShoesDescription: "",
+                newShoesCategory: "",
+                isLoading: false,
+            }));
+        } catch (err) {
+            console.error(err);
+        }
     };
 
     onCancelAddingClick = () => {
@@ -74,15 +82,20 @@ export default class Catalog extends Component {
     };
 
     onApproveDeleteClick = async () => {
+        this.setState({ isLoading: true });
         const filteredShoesArr = this.state.shoesCatalog.filter(
             (shoe) => shoe.id !== this.state.selectedItemToDelete
         );
-        console.log(filteredShoesArr);
-        await CatalogApi.delete(`/${this.state.selectedItemToDelete}`);
-        this.setState({
-            shoesCatalog: filteredShoesArr,
-            isDeleteItemPopupOpen: false,
-        });
+        try {
+            await CatalogApi.delete(`/${this.state.selectedItemToDelete}`);
+            this.setState({
+                shoesCatalog: filteredShoesArr,
+                isDeleteItemPopupOpen: false,
+                isLoading: false,
+            });
+        } catch (err) {
+            console.error(err);
+        }
     };
 
     render() {
@@ -100,7 +113,13 @@ export default class Catalog extends Component {
                     onApproveClicked={this.onApproveDeleteClick}
                     id={this.state.selectedItemToDelete}
                 ></DeleteItemPopup>
-                <div className="catalog-container">{this.displayShoes()}</div>;
+                {this.state.isLoading ? (
+                    <Spinner></Spinner>
+                ) : (
+                    <div className="catalog-container">
+                        {this.displayShoes()}
+                    </div>
+                )}
                 <AddItemBtn onAddClicked={this.onAddClicked}></AddItemBtn>
             </div>
         );

@@ -1,7 +1,17 @@
 import React, { Component } from "react";
+import "./Spinner.css";
 
 export default class Spinner extends Component {
     render() {
-        return <div>Spinner</div>;
+        return (
+            <div className="spinner-container">
+                <div class="lds-ring">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        );
     }
 }
