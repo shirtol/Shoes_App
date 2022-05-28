@@ -13,7 +13,12 @@ html {
     padding: 0 2rem;
     @include responsive(tablet) {
         flex-direction: column;
-        gap: 0rem;
+        justify-content: center;
+        gap: 2rem;
+    }
+    @include responsive(small-mobile) {
+        padding: 0;
+        gap: 8rem;
     }
     .home-page-image {
         @include responsive(small-screen) {
@@ -25,6 +30,9 @@ html {
         @include responsive(mobile) {
             width: 25rem;
         }
+        @include responsive(small-mobile) {
+            width: 15rem;
+        }
     }
     .home-page-text-container {
         text-align: center;
@@ -35,6 +43,7 @@ html {
         align-items: center;
         justify-content: center;
         width: 95%;
+
         .website-logo {
             font-family: "nike";
             font-size: 6rem;
@@ -49,6 +58,9 @@ html {
             @include responsive(mobile) {
                 font-size: 2.5rem;
             }
+            @include responsive(small-mobile) {
+                font-size: 1.6rem;
+            }
         }
         .website-description {
             font-family: "FuturaPT";
@@ -59,6 +71,9 @@ html {
             }
             @include responsive(mobile) {
                 font-size: 1.5rem;
+            }
+            @include responsive(small-mobile) {
+                font-size: 1rem;
             }
         }
         .catalog-link {

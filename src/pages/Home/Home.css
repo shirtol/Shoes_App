@@ -22,7 +22,17 @@ html {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    gap: 0rem;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .home-page-container {
+    padding: 0;
+    gap: 8rem;
   }
 }
 
@@ -41,6 +51,12 @@ html {
 @media (max-width: 500px) {
   .home-page-container .home-page-image {
     width: 25rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .home-page-container .home-page-image {
+    width: 15rem;
   }
 }
 
@@ -90,6 +106,12 @@ html {
   }
 }
 
+@media (max-width: 350px) {
+  .home-page-container .home-page-text-container .website-logo {
+    font-size: 1.6rem;
+  }
+}
+
 .home-page-container .home-page-text-container .website-description {
   font-family: "FuturaPT";
   font-size: 3rem;
@@ -105,6 +127,12 @@ html {
 @media (max-width: 500px) {
   .home-page-container .home-page-text-container .website-description {
     font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .home-page-container .home-page-text-container .website-description {
+    font-size: 1rem;
   }
 }
 

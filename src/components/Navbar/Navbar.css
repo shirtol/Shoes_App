@@ -12,6 +12,22 @@
   gap: 15rem;
 }
 
+@media (max-width: 500px) {
+  .navbar {
+    gap: 5rem;
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .navbar {
+    gap: 2rem;
+    font-size: 1rem;
+    padding: 5px;
+  }
+}
+
 .navbar li {
   list-style: none;
   cursor: pointer;
