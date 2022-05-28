@@ -1,3 +1,5 @@
+@import "../../utils/mixin.scss";
+
 html {
     height: 100vh;
 }
@@ -7,10 +9,59 @@ html {
     align-items: center;
     justify-content: center;
     height: 100%;
+
     .shoe-details-container {
         display: flex;
         justify-content: space-evenly;
         width: 90%;
         padding: 4rem 0;
+        @include responsive(tablet) {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100%;
+            padding: 0;
+        }
+        .details-form-container {
+            @include responsive(tablet) {
+                justify-content: flex-start;
+            }
+            & > *:not(.item-details-btn-container) {
+                @include responsive(small-screen) {
+                    width: 20rem;
+                }
+                @include responsive(tablet) {
+                    width: 40rem;
+                }
+                @include responsive(mini-tablet) {
+                    width: 30rem;
+                }
+                @include responsive(mobile) {
+                    width: 20rem;
+                }
+                @include responsive(small-mobile) {
+                    width: 15rem;
+                }
+            }
+            .item-details-btn-container {
+                @include responsive(small-screen) {
+                    padding-bottom: 1rem;
+                }
+                @include responsive(small-mobile) {
+                    gap: 1rem;
+                }
+            }
+        }
+        .image-details-page-container {
+            img {
+                @include responsive(small-screen) {
+                    width: 30rem;
+                    padding-top: 2rem;
+                }
+                @include responsive(small-mobile) {
+                    width: 20rem;
+                }
+            }
+        }
     }
 }

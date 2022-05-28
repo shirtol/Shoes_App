@@ -1,4 +1,4 @@
-// @import "../../Utils/mixin.scss";
+@import "../../utils/mixin.scss";
 
 .delete-item-container {
     width: 100%;
@@ -30,17 +30,20 @@
         position: sticky;
         text-align: center;
         padding: 0 1rem;
+        @include responsive(mobile) {
+            font-size: 3rem;
+        }
         .buttons-container {
             display: flex;
             gap: 3rem;
+            @include responsive(mobile) {
+                margin-bottom: 2rem;
+            }
         }
-        // @include responsive(tablet) {
-        //     width: 70%;
-        //     height: 50%;
-        // }
-        // @include responsive(mobile) {
-        //     width: 90%;
-        //     height: 30%;
-        // }
+
+        @include responsive(mobile) {
+            width: 80%;
+            height: 40%;
+        }
     }
 }

@@ -48,7 +48,7 @@ export default class ShoeDetails extends Component {
                 ) : (
                     <div className="center-shoe-details">
                         <div className="shoe-details-container">
-                            <div>
+                            <div className="image-details-page-container">
                                 <img
                                     className="preview-img"
                                     src={this.state.shoeItem.imageUrl}
@@ -56,6 +56,7 @@ export default class ShoeDetails extends Component {
                                 ></img>
                             </div>
                             <ShoesForm
+                                className="details-form-container"
                                 item={this.state.shoeItem}
                                 onInputChange={this.onInputChange}
                                 onSaveChanges={this.onUpdateShoeDetails}

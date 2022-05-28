@@ -36,6 +36,18 @@
           user-select: all;
 }
 
+@media (max-width: 500px) {
+  .update-item-details-form > *:not(.item-details-btn-container) {
+    width: 25rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .update-item-details-form > *:not(.item-details-btn-container) {
+    width: 20rem;
+  }
+}
+
 .update-item-details-form > *:nth-last-child(2) {
   resize: none;
   scrollbar-width: thin;

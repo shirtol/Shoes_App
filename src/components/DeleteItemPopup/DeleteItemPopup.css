@@ -47,10 +47,29 @@
   padding: 0 1rem;
 }
 
+@media (max-width: 500px) {
+  .delete-item-container > * {
+    font-size: 3rem;
+  }
+}
+
 .delete-item-container > * .buttons-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 3rem;
+}
+
+@media (max-width: 500px) {
+  .delete-item-container > * .buttons-container {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .delete-item-container > * {
+    width: 80%;
+    height: 40%;
+  }
 }
 /*# sourceMappingURL=DeleteItemPopup.css.map */

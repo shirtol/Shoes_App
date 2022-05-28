@@ -12,24 +12,128 @@ html {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   height: 100%;
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+@media (max-width: 1000px) {
+  .home-page-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .home-page-container {
+    padding: 0;
+    gap: 8rem;
+  }
+}
+
+@media (max-width: 1420px) {
+  .home-page-container .home-page-image {
+    width: 40rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .home-page-container .home-page-image {
+    width: 30rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .home-page-container .home-page-image {
+    width: 25rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .home-page-container .home-page-image {
+    width: 15rem;
+  }
 }
 
 .home-page-container .home-page-text-container {
   text-align: center;
   color: #333;
-  width: 30%;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 95%;
 }
 
 .home-page-container .home-page-text-container .website-logo {
   font-family: "nike";
   font-size: 6rem;
   letter-spacing: 1rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+@media (max-width: 1420px) {
+  .home-page-container .home-page-text-container .website-logo {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .home-page-container .home-page-text-container .website-logo {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .home-page-container .home-page-text-container .website-logo {
+    font-size: 1.6rem;
+  }
 }
 
 .home-page-container .home-page-text-container .website-description {
   font-family: "FuturaPT";
   font-size: 3rem;
   letter-spacing: 3px;
+}
+
+@media (max-width: 1420px) {
+  .home-page-container .home-page-text-container .website-description {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .home-page-container .home-page-text-container .website-description {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .home-page-container .home-page-text-container .website-description {
+    font-size: 1rem;
+  }
 }
 
 .home-page-container .home-page-text-container .catalog-link {

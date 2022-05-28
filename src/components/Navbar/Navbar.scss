@@ -1,3 +1,5 @@
+@import "../../utils/mixin.scss";
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -6,6 +8,16 @@
     font-family: "nike";
     letter-spacing: 0.8rem;
     gap: 15rem;
+    @include responsive(mobile) {
+        gap: 5rem;
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+    @include responsive(small-mobile) {
+        gap: 2rem;
+        font-size: 1rem;
+        padding: 5px;
+    }
     li {
         list-style: none;
         cursor: pointer;

@@ -5,7 +5,7 @@ export default class Spinner extends Component {
     render() {
         return (
             <div className="spinner-container">
-                <div class="lds-ring">
+                <div className="lds-ring">
                     <div></div>
                     <div></div>
                     <div></div>

@@ -1,0 +1,30 @@
+$media_queries: (
+    "small-screen": "(max-width: 1420px)",
+    "tablet": "(max-width: 1000px)",
+    "mini-tablet": "(max-width: 700px)",
+    "mobile": "(max-width: 500px)",
+    "small-mobile": "(max-width: 350px)",
+
+    // "tablet-height": "(max-height: 660px)",
+    // "mobile-height": "(max-height: 550px)",
+    // "mini-mobile-height": "(max-height: 425px)",
+    // "mobile": "(max-width:450px)",
+    // "big-height-screen": "(max-height: 1080px)",
+    // "big-width-screen": "(max-width: 1920px)",
+    // "galaxy-fold": "(max-width: 300px)",,,,,,,,,,,,,,,,,,
+);
+
+@mixin responsive($breakpoints) {
+    $conditions: ();
+    @each $breakpoint in $breakpoints {
+        $conditions: append(
+            $conditions,
+            #{inspect(map-get($media_queries, $breakpoint))},
+            comma
+        );
+    }
+
+    @media #{$conditions} {
+        @content;
+    }
+}
