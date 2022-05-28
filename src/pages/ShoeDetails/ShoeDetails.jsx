@@ -25,8 +25,17 @@ export default class ShoeDetails extends Component {
         }));
 
     onUpdateShoeDetails = async () => {
-        await CatalogApi.put(`/${this.state.shoeItem.id}`, this.state.shoeItem);
-        this.props.history.goBack();
+        this.setState({ isLoading: true });
+        try {
+            await CatalogApi.put(
+                `/${this.state.shoeItem.id}`,
+                this.state.shoeItem
+            );
+            this.props.history.goBack();
+            this.setState({ isLoading: false });
+        } catch (err) {
+            console.error(err);
+        }
     };
 
     onDiscardDetailsChanges = () => this.props.history.goBack();

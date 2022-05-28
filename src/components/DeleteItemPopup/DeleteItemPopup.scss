@@ -8,12 +8,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 10;
+    z-index: 30;
     background: rgba(255, 255, 255, 0.416);
     & > * {
+        font-family: "FuturaPT";
+        font-size: 4rem;
+        letter-spacing: 1.4px;
+        color: #333;
         width: 40%;
         height: 60%;
-        background: #8a6f8e;
+        background-color: #f6f6f6;
+        background-image: linear-gradient(315deg, #f6f6f6 0%, #e9e9e9 74%);
         opacity: 0.9;
         border-radius: 8px;
         box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
@@ -23,6 +28,12 @@
         align-items: center;
         justify-content: space-around;
         position: sticky;
+        text-align: center;
+        padding: 0 1rem;
+        .buttons-container {
+            display: flex;
+            gap: 3rem;
+        }
         // @include responsive(tablet) {
         //     width: 70%;
         //     height: 50%;

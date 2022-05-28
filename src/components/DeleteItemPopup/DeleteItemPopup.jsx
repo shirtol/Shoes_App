@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Button from "../Button/Button";
 import "./DeleteItemPopup.css";
 
 export default class DeleteItemPopup extends Component {
@@ -10,12 +11,21 @@ export default class DeleteItemPopup extends Component {
                         <h3>Are you sure you want to delete this item?</h3>
 
                         <div className="buttons-container">
-                            <button onClick={this.props.onCancelClicked}>
+                            <Button
+                                buttonText="Yes"
+                                onBtnClick={this.props.onApproveClicked}
+                            ></Button>
+                            <Button
+                                buttonText="Cancel"
+                                onBtnClick={this.props.onCancelClicked}
+                            ></Button>
+
+                            {/* <button onClick={this.props.onCancelClicked}>
                                 Cancel
                             </button>
                             <button onClick={this.props.onApproveClicked}>
                                 Yes
-                            </button>
+                            </button> */}
                         </div>
                     </div>
                 </div>

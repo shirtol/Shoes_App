@@ -1,4 +1,51 @@
 html {
   font-size: 62.5%;
 }
+
+.home-page-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 100%;
+}
+
+.home-page-container .home-page-text-container {
+  text-align: center;
+  color: #333;
+  width: 30%;
+}
+
+.home-page-container .home-page-text-container .website-logo {
+  font-family: "nike";
+  font-size: 6rem;
+  letter-spacing: 1rem;
+}
+
+.home-page-container .home-page-text-container .website-description {
+  font-family: "FuturaPT";
+  font-size: 3rem;
+  letter-spacing: 3px;
+}
+
+.home-page-container .home-page-text-container .catalog-link {
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.home-page-container .home-page-text-container .catalog-link .home-page-btn {
+  width: 6rem;
+}
 /*# sourceMappingURL=Home.css.map */
