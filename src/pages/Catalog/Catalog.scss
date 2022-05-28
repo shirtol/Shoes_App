@@ -1,8 +1,11 @@
+@import "../../utils/mixin.scss";
+
 .center {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-bottom: 2rem;
     .catalog-container {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -11,5 +14,20 @@
         align-self: center;
         padding-top: 2rem;
         padding-bottom: 2rem;
+        @include responsive(mini-tablet) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @include responsive(mobile) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include responsive(small-mobile) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+        & > * {
+            @include responsive(small-mobile) {
+                margin: 0 3rem;
+                align-self: center;
+            }
+        }
     }
 }

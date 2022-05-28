@@ -12,6 +12,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding-bottom: 2rem;
 }
 
 .center .catalog-container {
@@ -25,5 +26,35 @@
       align-self: center;
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+@media (max-width: 700px) {
+  .center .catalog-container {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .center .catalog-container {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 350px) {
+  .center .catalog-container {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (max-width: 350px) {
+  .center .catalog-container > * {
+    margin: 0 3rem;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
 }
 /*# sourceMappingURL=Catalog.css.map */
