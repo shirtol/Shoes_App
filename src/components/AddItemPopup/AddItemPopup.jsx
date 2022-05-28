@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ShoesForm from "../ShoesForm/ShoesForm";
 import "./AddItemPopup.css";
+import * as validation from "../../utils/validation.js";
 
 export default class AddItemPopup extends Component {
     state = {
@@ -32,6 +33,13 @@ export default class AddItemPopup extends Component {
         this.resetNewShoesData();
     };
 
+    isUserInputValid = () =>
+        validation.isValidCategory(this.state.category) &&
+        validation.isValidImage(this.state.imageUrl) &&
+        validation.isValidPrice(this.state.price) &&
+        validation.isValidProductName(this.state.productName) &&
+        validation.isValidSize(this.state.size);
+
     render() {
         return (
             this.props.isShown && (
@@ -41,6 +49,7 @@ export default class AddItemPopup extends Component {
                             Please fill all the fields and submit your new shoes
                         </h3>
                         <ShoesForm
+                            disable={!this.isUserInputValid()}
                             onInputChange={this.onInputChange}
                             onSaveChanges={this.saveNewItem}
                             onDiscardChanges={this.resetNewShoesData}
