@@ -1,3 +1,35 @@
 html {
     font-size: 62.5%;
 }
+
+.home-page-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+
+    .home-page-text-container {
+        text-align: center;
+        color: #333;
+        width: 30%;
+        .website-logo {
+            font-family: "nike";
+            font-size: 6rem;
+            letter-spacing: 1rem;
+        }
+        .website-description {
+            font-family: "FuturaPT";
+            font-size: 3rem;
+            letter-spacing: 3px;
+        }
+        .catalog-link {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .home-page-btn {
+                width: 6rem;
+            }
+        }
+    }
+}

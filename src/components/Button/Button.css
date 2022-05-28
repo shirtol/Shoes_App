@@ -10,4 +10,19 @@
   color: #fff;
   cursor: pointer;
 }
+
+.button-container:active {
+  -webkit-transition: -webkit-box-shadow 100ms ease-in-out;
+  transition: -webkit-box-shadow 100ms ease-in-out;
+  transition: box-shadow 100ms ease-in-out;
+  transition: box-shadow 100ms ease-in-out, -webkit-box-shadow 100ms ease-in-out;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  -webkit-transition: -webkit-transform 100ms ease-in-out;
+  transition: -webkit-transform 100ms ease-in-out;
+  transition: transform 100ms ease-in-out;
+  transition: transform 100ms ease-in-out, -webkit-transform 100ms ease-in-out;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 15px 27px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+          box-shadow: rgba(0, 0, 0, 0.3) 0px 15px 27px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
 /*# sourceMappingURL=Button.css.map */
