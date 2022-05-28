@@ -5,6 +5,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import Home from "../Home/Home";
 import Catalog from "../Catalog/Catalog";
 import ShoeDetails from "../ShoeDetails/ShoeDetails";
+import NotFound from "../../components/NotFound/NotFound";
 import "./Routes.css";
 
 const Routes = () => {
@@ -26,6 +27,7 @@ const Routes = () => {
                             <ShoeDetails {...props}></ShoeDetails>
                         )}
                     ></Route>
+                    <Route path="/*" exact component={NotFound}></Route>
                 </Switch>
             </div>
         </div>
