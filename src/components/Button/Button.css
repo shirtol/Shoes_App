@@ -11,6 +11,12 @@
   cursor: pointer;
 }
 
+@media (max-width: 500px) {
+  .button-container {
+    padding: 0.6rem 2.4rem;
+  }
+}
+
 .button-container:active {
   -webkit-transition: -webkit-box-shadow 100ms ease-in-out;
   transition: -webkit-box-shadow 100ms ease-in-out;
