@@ -7,31 +7,31 @@ export default class ShoesForm extends Component {
         return (
             <div className={`update-item-details-form ${this.props.className}`}>
                 <input
-                    placeholder="Name"
+                    placeholder="Name (3-30 chars)"
                     id="productName"
                     value={this.props.item.productName}
                     onChange={this.props.onInputChange}
                 ></input>
                 <input
-                    placeholder="Category"
+                    placeholder="Category (up to 30 chars)"
                     id="category"
                     value={this.props.item.category}
                     onChange={this.props.onInputChange}
                 ></input>
                 <input
-                    placeholder="Size"
+                    placeholder="Size (1-3 chars)"
                     id="size"
                     value={this.props.item.size}
                     onChange={this.props.onInputChange}
                 ></input>
                 <input
-                    placeholder="Price"
+                    placeholder="Price (1-10 chars)"
                     id="price"
                     value={this.props.item.price}
                     onChange={this.props.onInputChange}
                 ></input>
                 <input
-                    placeholder="Image"
+                    placeholder="Image (valid image url)"
                     id="imageUrl"
                     value={this.props.item.imageUrl}
                     onChange={this.props.onInputChange}
@@ -46,6 +46,7 @@ export default class ShoesForm extends Component {
                     <Button
                         buttonText="Save"
                         onBtnClick={this.props.onSaveChanges}
+                        disable={this.props.disable}
                     ></Button>
                     <Button
                         buttonText="Discard"

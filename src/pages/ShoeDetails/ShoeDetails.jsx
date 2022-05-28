@@ -4,6 +4,7 @@ import "./ShoeDetails.css";
 import { CatalogApi } from "../../api/api";
 import Spinner from "../../components/Spinner/Spinner";
 import NotFound from "../../components/NotFound/NotFound";
+import * as validation from "../../utils/validation.js";
 
 export default class ShoeDetails extends Component {
     product = this.props.location.item;
@@ -41,6 +42,17 @@ export default class ShoeDetails extends Component {
 
     onDiscardDetailsChanges = () => this.props.history.goBack();
 
+    isUserInputValid = () => {
+        console.log(this.state.shoeItem);
+        return (
+            validation.isValidCategory(this.state.shoeItem.category) &&
+            validation.isValidImage(this.state.shoeItem.imageUrl) &&
+            validation.isValidPrice(this.state.shoeItem.price) &&
+            validation.isValidProductName(this.state.shoeItem.productName) &&
+            validation.isValidSize(this.state.shoeItem.size)
+        );
+    };
+
     render() {
         return this.product ? (
             <>
@@ -57,6 +69,7 @@ export default class ShoeDetails extends Component {
                                 ></img>
                             </div>
                             <ShoesForm
+                                disable={!this.isUserInputValid()}
                                 className="details-form-container"
                                 item={this.state.shoeItem}
                                 onInputChange={this.onInputChange}

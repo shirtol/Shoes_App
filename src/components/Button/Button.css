@@ -31,4 +31,9 @@
   -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 15px 27px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
           box-shadow: rgba(0, 0, 0, 0.3) 0px 15px 27px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
+
+.button-container[disabled] {
+  pointer-events: none;
+  opacity: 0.7;
+}
 /*# sourceMappingURL=Button.css.map */
