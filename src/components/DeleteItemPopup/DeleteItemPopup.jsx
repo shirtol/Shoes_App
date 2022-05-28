@@ -19,13 +19,6 @@ export default class DeleteItemPopup extends Component {
                                 buttonText="Cancel"
                                 onBtnClick={this.props.onCancelClicked}
                             ></Button>
-
-                            {/* <button onClick={this.props.onCancelClicked}>
-                                Cancel
-                            </button>
-                            <button onClick={this.props.onApproveClicked}>
-                                Yes
-                            </button> */}
                         </div>
                     </div>
                 </div>
