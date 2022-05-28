@@ -25,4 +25,16 @@ html {
   width: 90%;
   padding: 4rem 0;
 }
+
+@media (max-width: 1420px) {
+  .center-shoe-details .shoe-details-container .details-form-container > *:not(.item-details-btn-container) {
+    width: 20rem;
+  }
+}
+
+@media (max-width: 1420px) {
+  .center-shoe-details .shoe-details-container .image-details-page-container img {
+    width: 40rem;
+  }
+}
 /*# sourceMappingURL=ShoeDetails.css.map */

@@ -1,3 +1,5 @@
+@import "../../utils/mixin.scss";
+
 html {
     height: 100vh;
 }
@@ -12,5 +14,19 @@ html {
         justify-content: space-evenly;
         width: 90%;
         padding: 4rem 0;
+        .details-form-container {
+            & > *:not(.item-details-btn-container) {
+                @include responsive(small-screen) {
+                    width: 20rem;
+                }
+            }
+        }
+        .image-details-page-container {
+            img {
+                @include responsive(small-screen) {
+                    width: 40rem;
+                }
+            }
+        }
     }
 }

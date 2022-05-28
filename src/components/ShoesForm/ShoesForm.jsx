@@ -5,7 +5,7 @@ import "./ShoesForm.css";
 export default class ShoesForm extends Component {
     render() {
         return (
-            <div className="update-item-details-form">
+            <div className={`update-item-details-form ${this.props.className}`}>
                 <input
                     placeholder="Name"
                     id="productName"
