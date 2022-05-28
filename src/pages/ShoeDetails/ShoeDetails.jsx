@@ -3,6 +3,7 @@ import ShoesForm from "../../components/ShoesForm/ShoesForm";
 import "./ShoeDetails.css";
 import { CatalogApi } from "../../api/api";
 import Spinner from "../../components/Spinner/Spinner";
+import NotFound from "../../components/NotFound/NotFound";
 
 export default class ShoeDetails extends Component {
     product = this.props.location.item;
@@ -41,7 +42,7 @@ export default class ShoeDetails extends Component {
     onDiscardDetailsChanges = () => this.props.history.goBack();
 
     render() {
-        return (
+        return this.product ? (
             <>
                 {this.state.isLoading ? (
                     <Spinner></Spinner>
@@ -66,6 +67,8 @@ export default class ShoeDetails extends Component {
                     </div>
                 )}
             </>
+        ) : (
+            <NotFound></NotFound>
         );
     }
 }

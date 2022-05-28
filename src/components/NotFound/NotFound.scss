@@ -1,0 +1,32 @@
+@import "../../utils/mixin.scss";
+
+.not-found-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 70vh;
+    gap: 5rem;
+    font-family: "FuturaPT";
+    font-size: 4rem;
+    color: #333;
+    text-align: center;
+    padding: 1rem;
+    @include responsive(mobile) {
+        font-size: 3rem;
+    }
+    .not-found-msg {
+        margin: 0;
+    }
+    .not-found-link {
+        text-decoration: none;
+        color: #333;
+        padding-bottom: 2rem;
+    }
+    .not-found-image {
+        width: 30rem;
+        @include responsive(mobile) {
+            width: 20rem;
+        }
+    }
+}
