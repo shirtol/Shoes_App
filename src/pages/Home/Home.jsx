@@ -8,6 +8,7 @@ export default class Home extends Component {
         return (
             <div className="home-page-container">
                 <img
+                    className="home-page-image"
                     src={require("../../assets/images/home-page.png")}
                     alt="bg"
                 />

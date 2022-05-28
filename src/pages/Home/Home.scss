@@ -1,3 +1,5 @@
+@import "../../utils/mixin.scss";
+
 html {
     font-size: 62.5%;
 }
@@ -7,20 +9,57 @@ html {
     align-items: center;
     justify-content: space-around;
     height: 100%;
-
+    gap: 2rem;
+    padding: 0 2rem;
+    @include responsive(tablet) {
+        flex-direction: column;
+        gap: 0rem;
+    }
+    .home-page-image {
+        @include responsive(small-screen) {
+            width: 40rem;
+        }
+        @include responsive(tablet) {
+            width: 30rem;
+        }
+        @include responsive(mobile) {
+            width: 25rem;
+        }
+    }
     .home-page-text-container {
         text-align: center;
         color: #333;
-        width: 30%;
+        width: max-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 95%;
         .website-logo {
             font-family: "nike";
             font-size: 6rem;
             letter-spacing: 1rem;
+            width: max-content;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            @include responsive(small-screen) {
+                font-size: 3.5rem;
+            }
+            @include responsive(mobile) {
+                font-size: 2.5rem;
+            }
         }
         .website-description {
             font-family: "FuturaPT";
             font-size: 3rem;
             letter-spacing: 3px;
+            @include responsive(small-screen) {
+                font-size: 1.8rem;
+            }
+            @include responsive(mobile) {
+                font-size: 1.5rem;
+            }
         }
         .catalog-link {
             text-decoration: none;
